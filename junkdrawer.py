@@ -16,7 +16,6 @@ sleeper_auth = os.getenv('SLEEPER_AUTH')
 key = os.getenv('OPENROUTER_API_KEY')
 
 def create_filter_json(offset):
-    # Create the filter dictionary with dynamic offset
     filter_dict = {
         "players": {
             "filterSlotIds": {
@@ -60,7 +59,6 @@ def create_filter_json(offset):
         }
     }
 
-    # Serialize the dictionary to a JSON string
     filter_json = json.dumps(filter_dict)
 
     return filter_json
