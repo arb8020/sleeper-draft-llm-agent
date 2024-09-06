@@ -1,0 +1,16 @@
+{
+  "models": {
+    "a": "openai/gpt-4o-mini",
+    "b": "openai/gpt-4o-mini",
+    "c": "openai/gpt-4o-mini",
+    "d": "openai/gpt-4o-mini",
+    "e": "openai/gpt-4o-mini",
+    "f": "openai/gpt-4o-mini",
+    "g": "openai/gpt-4o-mini",
+    "h": "openai/gpt-4o-mini",
+    "i": "openai/gpt-4o-mini",
+    "j": "openai/gpt-4o-mini",
+    "k": "openai/gpt-4o-mini",
+    "l": "openai/gpt-4o-mini"
+  },
+  "draft_id": 12345,
