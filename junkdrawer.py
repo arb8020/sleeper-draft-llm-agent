@@ -15,7 +15,56 @@ load_dotenv()
 sleeper_auth = os.getenv('SLEEPER_AUTH')
 key = os.getenv('OPENROUTER_API_KEY')
 
+def create_filter_json(offset):
+    # Create the filter dictionary with dynamic offset
+    filter_dict = {
+        "players": {
+            "filterSlotIds": {
+                "value": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,23,24]
+            },
+            "filterStatsForExternalIds": {
+                "value": [2023,2024]
+            },
+            "filterStatsForSourceIds": {
+                "value": [0,1]
+            },
+            "sortAppliedStatTotal": {
+                "sortAsc": False,
+                "sortPriority": 3,
+                "value": "102024"
+            },
+            "sortDraftRanks": {
+                "sortPriority": 2,
+                "sortAsc": True,
+                "value": "PPR"
+            },
+            "sortPercOwned": {
+                "sortAsc": False,
+                "sortPriority": 4
+            },
+            "limit": 50,
+            "offset": offset,
+            "filterRanksForScoringPeriodIds": {
+                "value": [1]
+            },
+            "filterRanksForRankTypes": {
+                "value": ["PPR"]
+            },
+            "filterRanksForSlotIds": {
+                "value": [0,2,4,6,17,16,8,9,10,12,13,24,11,14,15]
+            },
+            "filterStatsForTopScoringPeriodIds": {
+                "value": 2,
+                "additionalValue": ["002024", "102024", "002023", "022024"]
+            }
+        }
+    }
 
+    # Serialize the dictionary to a JSON string
+    filter_json = json.dumps(filter_dict)
+
+    return filter_json
+    
 def create_meta_prompt(pos, csv_data):
     return f"""As an large language model, your task is to design a prompt that you will use to create a fantasy football draft cheatsheet. This cheatsheet will be used alongside real-time data during a live draft with the following parameters:
 
