@@ -6,6 +6,7 @@ This repository allows you to conduct a fantasy football draft on Sleeper Fantas
 1. create a .env file
 2. add a openrouter api key OPENROUTER_API_KEY= (can make one at https://openrouter.ai/docs/api-keys)
 3. add the JWT (json web token) that your computer uses for requests to sleeper SLEEPER_AUTH= (can be found from inspect -> network -> filter fetch/XHR -> refresh page -> graphql -> headers -> request headers)
+4. add the parent_id and client_id that your computer uses for sending messages in the sleeper draft as PARENT_ID and CLIENT_ID (use same process as above)
 4. edit the config.json to change agent names/models (model names should come from openrouter.ai/models)
 5. edit the config.json to enter your draft id from sleeper (sleeper.com/draft/nfl/DRAFT_ID)
 6. run draft_script.py
