@@ -1,0 +1,26 @@
+- i wonder if i can get language models to draft fantasy football
+- first need the agent to interact with the website
+- checked network tab, graphql api hittable with minimal headers
+- wrote basic script to draft random players
+- had to create multiple accounts manually :|
+- next: prompt language models to choose a player
+- needed to get data for the language model
+- used the sleeper data - way too many rows (2600??)
+- dropped all inactive players
+- realized just adp/etc maybe is incomplete info + doesn’t take advantage of language model
+- found api for espn fantasy, extracted season outlook blurbs
+- fullnames were different, had to manually create mapping for some players (hollywood/marquise brown)
+- got final dataframe
+- had models create cheatsheet for themselves off of the data csv, to use with dataframe
+- weaker models would get names wrong, had to implement fuzzy matching
+- draft would break when models would get something wrong, implemented looping 
+- added thought -> action from ReAct paper
+- read SWE-Agent paper
+- realized dumping the entire csv at the model was not a great idea
+- implemented rough ACI loop, gave the agents commands they could run
+- had to manage conversation history, was doing fully new req each time
+- formatting tweaks to finish the ACI drafting
+- moving onto ACI roster management
+- setting lineups, making trades, add/drop players
+- decided to split into roster eval loop, player adds loop, trades loop
+- 
