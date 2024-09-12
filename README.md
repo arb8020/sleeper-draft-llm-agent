@@ -1,6 +1,17 @@
 # sleeper-draft-llm-agent
 
-This repository allows you to conduct a fantasy football draft on Sleeper Fantasy using Large Language Model Agents. The Agents will analyze the draft data CSV in order to come up with prompts for themselves to create cheatsheets/draft strategy guides. They will then use those prompts to create the guides, and then use that guide along with the CSV data in order to draft players against each other in real time. The current setup is for a 12 team PPR draft with 1 QB, 2 RB 2 WR 1 FLEX 1 TE 1 K 1 DST.
+This repository is meant to be an exploration of using Large Language Model Agents for tasks like playing Fantasy Football. We use Sleeper Fantasy and ESPN for data. Currently the models are set up for a 12 team PPR League: 1QB, 2RB, 2WR, 1FLEX, 1TE, 1K, 1D
+
+## Key Files
+- draft_script_aci.py: implements an ACI inspired by SWE-Agent to allow the models to more easily navigate through data and draft players. can connect to sleeper and draft automatically
+- roster_actions_aci.py: similar to the above, allows the models to evaluate their roster, search free agents, and generate add drop decisions. cannot yet connect to sleeper, actions have to be taken manually.
+- draft_script.py: first version, had models compress data by making themselves cheatsheets for the draft and drafting using that information
+
+## COMING SOON
+- automatic roster actions
+- models trading with each other
+- setting lineups
+- more model forecasting/reasoning
 
 ## USAGE
 1. create a .env file
@@ -26,7 +37,9 @@ This repository allows you to conduct a fantasy football draft on Sleeper Fantas
 - clean up junkdrawer.py
 ### features/improvements
 - make it more easy to tweak league type/settings
-- implement a more robust ACI to reduce agent mistakes (see SWE-Bench paper)
 - add more interesting data in create_initial_draft.py
 - potentially have the models come up with their own player forecasts
+- add trade functionality
+- add lineup setting
+- generally make the LLM do more of the work, very hand-holded at the moment
 - better prompt engineering
