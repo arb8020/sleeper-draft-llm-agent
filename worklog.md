@@ -6,9 +6,12 @@
 - next: prompt language models to choose a player
 - needed to get data for the language model
 - used the sleeper data - way too many rows (2600??)
+- sleeper data very convenient, will just drop you all the data no questions or pagination
 - dropped all inactive players
 - realized just adp/etc maybe is incomplete info + doesn’t take advantage of language model
+- nfl fantasy api was a pain so i gave up
 - found api for espn fantasy, extracted season outlook blurbs
+- had to do some pagination but nothing crazy
 - fullnames were different, had to manually create mapping for some players (hollywood/marquise brown)
 - got final dataframe
 - had models create cheatsheet for themselves off of the data csv, to use with dataframe
@@ -20,7 +23,22 @@
 - implemented rough ACI loop, gave the agents commands they could run
 - had to manage conversation history, was doing fully new req each time
 - formatting tweaks to finish the ACI drafting
+- most of making this work was little syntax and prompting things
 - moving onto ACI roster management
 - setting lineups, making trades, add/drop players
 - decided to split into roster eval loop, player adds loop, trades loop
-- 
+- got roster evals working, now working on player adding
+- main issue so far with player adding was figuring out which endpoints to hit
+- and now figuring out which stats to let the LM use
+- dont want to overwhelm but dont want to hold out info
+- model is having trouble both identifying to add and dropping players in the same loop, may break it up
+- noticing that agents have started to hallucinate commands more often - i wonder what the balance between tailoring to what it wants vs enforcing my commands is
+- might be useful to add specific guardrails for different types of commands
+- split up the evaluations by position for searching for free agents
+- may need to rework the interface
+- finally got it working by splitting the tasks up
+- now just need to run the transaction
+- looks like it uses cookie for auth 
+- selenium got captcha'd 
+- will deal w automating the transactions on the sleeper side another time
+
