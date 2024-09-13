@@ -4,14 +4,21 @@ This repository is meant to be an exploration of using Large Language Model Agen
 
 ## Key Files
 - draft_script_aci.py: implements an ACI inspired by SWE-Agent to allow the models to more easily navigate through data and draft players. can connect to sleeper and draft automatically
-- roster_actions_aci.py: similar to the above, allows the models to evaluate their roster, search free agents, and generate add drop decisions. cannot yet connect to sleeper, actions have to be taken manually.
-- draft_script.py: first version, had models compress data by making themselves cheatsheets for the draft and drafting using that information
+- roster_actions.py: similar to draft_script.py, doesnt implement ACI but successfuly has LM give recommendation on different actions to take. not yet connected to sleeper for autonomous actions
+- initialdraftdf.csv: initial data used for drafting, collected from Sleeper and ESPN Fantasy
+- config.json: draftid and model information for draft_script_aci.py
+
+## DEPRECATED
+- draft_script.py: first version, had models compress data by making themselves cheatsheets for the draft and drafting using that information. drafts autonomously
+- junkdrawer.py: functions for the initial version of draft_script.py 
 
 ## COMING SOON
+- remove deprecated code
 - automatic roster actions
-- models trading with each other
-- setting lineups
-- more model forecasting/reasoning
+- ACI for roster actions
+- models doing more of the work (creating their own forecasts from the statistics, etc)
+- cleaner code
+- more league settings
 
 ## USAGE
 1. create a .env file
@@ -27,7 +34,7 @@ This repository is meant to be an exploration of using Large Language Model Agen
 - draft_script.py is the main script that runs the agents
 - config.json is where you put which models you want to use, and the draftid (required for above to work)
 - create_initial_draft.py is where you would modify the main csv data that the models use to create cheatsheets and draft
-- junkdrawer.py has all the random unorganized utility functions
+- junkdrawer.py has a bunch of the random unorganized utility functions for the original draft_script.py
 - initialdraftdf.csv is included for easily running the current version
 
 ## TODOS:
