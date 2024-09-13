@@ -8,12 +8,7 @@ This repository is meant to be an exploration of using Large Language Model Agen
 - initialdraftdf.csv: initial data used for drafting, collected from Sleeper and ESPN Fantasy
 - config.json: draftid and model information for draft_script_aci.py
 
-## DEPRECATED
-- draft_script.py: first version, had models compress data by making themselves cheatsheets for the draft and drafting using that information. drafts autonomously
-- junkdrawer.py: functions for the initial version of draft_script.py 
-
 ## COMING SOON
-- remove deprecated code
 - automatic roster actions
 - ACI for roster actions
 - models doing more of the work (creating their own forecasts from the statistics, etc)
